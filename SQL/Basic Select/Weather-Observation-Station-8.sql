@@ -1,1 +1,2 @@
-select distinct city from station where left(city,1) in('a','e','i','o','u') and right(city,1) in('a','e','i','o','u') 
+SELECT DISTINCT city FROM station
+WHERE left(city,1) IN('a','e','i','o','u') AND right(city,1) IN('a','e','i','o','u');

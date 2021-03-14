@@ -1,3 +1,2 @@
-select Round(max(LAT_N),4)
-from STATION
-where LAT_N < 137.2345;
+SELECT Round(MAX(LAT_N),4) FROM STATION
+WHERE LAT_N < 137.2345;

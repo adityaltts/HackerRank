@@ -1,2 +1,2 @@
-# Author: Thomas George Thomas
-Select name from city where population > 120000 and Countrycode = "USA";
+SELECT name FROM city
+WHERE population > 120000 AND Countrycode = "USA";

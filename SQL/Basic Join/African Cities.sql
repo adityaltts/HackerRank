@@ -1,1 +1,3 @@
-select city.name from city join country on city.countrycode = country.code where country.continent = 'Africa';
+SELECT city.name FROM city
+JOIN country ON city.countrycode = country.code
+WHERE country.continent = 'Africa';

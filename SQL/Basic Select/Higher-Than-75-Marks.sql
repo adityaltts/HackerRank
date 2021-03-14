@@ -1,2 +1,2 @@
-# Author: Thomas George Thomas
-select name from students where marks > 75 order by right(name,3),id asc;
+SELECT name FROM students
+WHERE marks > 75 ORDER BY right(name,3),id ASC;
