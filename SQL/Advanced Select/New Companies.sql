@@ -10,4 +10,4 @@ lm.lead_manager_code=sm.lead_manager_code AND
 sm.senior_manager_code=m.senior_manager_code AND
 m.manager_code=e.manager_code
 GROUP BY c.company_code,c.founder
-ORDER BY c.company_code ASC
+ORDER BY c.company_code ASC;
