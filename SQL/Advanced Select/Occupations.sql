@@ -1,18 +1,15 @@
-SET @d=0, @p=0, @s=0, @a=0;
-
-SELECT min(Doctor), min(Professor), min(Singer), min(Actor)
-FROM(
-  SELECT case 
-            when Occupation='Doctor' then (@d:=@d+1)
-            when Occupation='Professor' then (@p:=@p+1)
-            when Occupation='Singer' then (@s:=@s+1)
-            when Occupation='Actor' then (@a:=@a+1) 
-            end AS Row,
-        case when Occupation='Doctor' then Name end AS Doctor,
-        case when Occupation='Professor' then Name end AS Professor,
-        case when Occupation='Singer' then Name end AS Singer,
-        case when Occupation='Actor' then Name end AS Actor
-  FROM OCCUPATIONS
-  ORDER BY Name
-) AS temp
-GROUP BY Row;
+SET @d=0, @a=0, @p=0, @s=0;
+SELECT MIN(Doctor),MIN(Professor),MIN(SINGER),MIN(Actor)
+FROM
+(SELECT IF(OCCUPATION='Actor',NAME,NULL) AS Actor,
+        IF(OCCUPATION='Doctor',NAME,NULL) AS Doctor,
+        IF(OCCUPATION='Professor',NAME,NULL) AS Professor,
+        IF(OCCUPATION='Singer',NAME,NULL) AS SINGER,
+ CASE OCCUPATION
+    WHEN 'Actor' THEN @a:=@a+1
+    WHEN 'Doctor' THEN @d:=@d+1
+    WHEN 'Professor' THEN @p:=@p+1
+    WHEN 'Singer' THEN @s:=@s+1
+ END
+AS idn FROM OCCUPATIONS ORDER BY NAME )
+AS temp GROUP BY temp.idn;
