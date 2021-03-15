@@ -1,7 +1,7 @@
-select concat(name,'(',substring(Occupation,1,1),')') as Name 
-from occupations 
-order by Name;
-Select concat ('There are a total of ', count(occupation),' ', lower(occupation),'s.') as totals
-from occupations
-group by occupation
-order by totals
+SELECT concat(name,'(',substring(Occupation,1,1),')') AS Name 
+FROM occupations 
+ORDER BY Name;
+SELECT concat ('There are a total of ', COUNT(occupation),' ', lower(occupation),'s.') AS totals
+FROM occupations
+GROUP BY occupation
+ORDER BY totals;
